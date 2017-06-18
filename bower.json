@@ -1,0 +1,22 @@
+{
+  "name": "cvety",
+  "description": "Сайт по продаже цветов",
+  "main": "gulpfile.js",
+  "authors": [
+    "Milok Murlyka"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}

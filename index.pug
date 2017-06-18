@@ -1,0 +1,274 @@
+doctype html
+html(lang="ru")
+	head
+		title cvety — Главная
+		include pug/meta/meta
+		include pug/meta/link
+		include pug/atom.pug
+		include pug/molecul.pug
+		include pug/icon.pug
+	body.t-page
+		a.t-banner-top(href="#")
+			.t-banner-top__close: +i-banner-close
+			.t-banner-top__text Цветы на пасху
+		.t-header: .t-container
+			.t-header__top
+				.t-header__bar
+					ul.o-bar
+						li.o-bar__item
+							.m-dropdown
+								.m-dropdown__current
+									.m-dropdown__value: .m-dropdown__icon: +i-flag-russia()
+									.m-dropdown__corner: +i-disclosure-indicator()
+									ul.m-dropdown__list
+										li.m-dropdown__item
+											span.m-dropdown__icon: +i-flag-russia()
+											span.m-dropdown__text ru
+										li.m-dropdown__item
+											span.m-dropdown__icon: +i-flag-russia()
+											span.m-dropdown__text en
+										li.m-dropdown__item
+											span.m-dropdown__icon: +i-flag-russia()
+											span.m-dropdown__text kz
+										
+								
+						li.o-bar__item
+							a.a-link.a-link-dashed(href="#") love@cvety.kz
+						li.o-bar__item
+							a.a-link.a-link-dashed(href="#") +7 (702) 222 07 30
+				nav.t-header__nav
+					ul.m-nav
+						li.m-nav__item: a.m-nav__link(href="#") Контакты
+						li.m-nav__item: a.m-nav__link(href="#") Гарантии
+						li.m-nav__item: a.m-nav__link(href="#") Доставка
+						li.m-nav__item: a.m-nav__link(href="#") Оплата
+			.t-header__container
+				.t-header__burger(data-open="#t-menu-header"): +a-burger(true)
+				.t-header__logo: +a-logo
+				.t-header__message-cloud: +i-message-cloud
+		.t-catalog-filter: .t-container
+			.t-catalog-filter__container
+				.t-catalog__delivery
+					.m-delivery Доставка цветов в 
+						a.m-delivery__city.a-link-dashed(href="#") Астане
+				.t-catalog__menu: .m-button-menu(data-open="#t-menu-filter")
+					span.m-button-menu__title Каталог
+					span.m-button-menu__disclosure: +a-disclosure
+				.t-catalog__list: ul.o-nav-filter
+					li.o-nav-filter__column
+						.o-nav-column__title Цена
+						ul.o-nav-column__list
+							li.o-nav-column__item: a.o-nav-column__link(href="#") до 15 000тг 
+							li.o-nav-column__item: a.o-nav-column__link(href="#") от 15 000тг до 30 000тг
+							li.o-nav-column__item: a.o-nav-column__link(href="#") от 30 000тг
+					
+					li.o-nav-filter__column
+						.o-nav-column__title Цветы
+							
+						ul.o-nav-column__list
+							li.o-nav-column__item: a.o-nav-column__link(href="#") Кустовая роза
+							li.o-nav-column__item: a.o-nav-column__link(href="#") Голландские розы
+							li.o-nav-column__item: a.o-nav-column__link(href="#") Розы
+							li.o-nav-column__item: a.o-nav-column__link(href="#") Герберы
+							li.o-nav-column__item: a.o-nav-column__link(href="#") Тюльпаны
+					
+					li.o-nav-filter__column
+						.o-nav-column__title Кому
+						ul.o-nav-column__list
+							li.o-nav-column__item: a.o-nav-column__link(href="#") Женщине
+							li.o-nav-column__item: a.o-nav-column__link(href="#") Мужчине
+							li.o-nav-column__item: a.o-nav-column__link(href="#") Коллеге
+							li.o-nav-column__item: a.o-nav-column__link(href="#") Любимой
+					
+					li.o-nav-filter__column
+						.o-nav-column__title Повод
+						ul.o-nav-column__list
+							li.o-nav-column__item: a.o-nav-column__link(href="#") Праздник
+							li.o-nav-column__item: a.o-nav-column__link(href="#") День Рождения
+							li.o-nav-column__item: a.o-nav-column__link(href="#") Свадьба
+							li.o-nav-column__item: a.o-nav-column__link(href="#") Годовщина
+					
+					li.o-nav-filter__column
+						.o-nav-column__title Цвет
+							
+						ul.o-nav-column__list
+							li.o-nav-column__item: a.o-nav-column__link(href="#")
+								span.a-color(style="background: #d0011b")
+								| Красный
+							li.o-nav-column__item: a.o-nav-column__link(href="#")
+								span.a-color(style="background: #f66aa2")
+								| Розовый
+							li.o-nav-column__item: a.o-nav-column__link(href="#")
+								span.a-color.a-color_bordered(style="background: #fff")
+								| Белый
+							li.o-nav-column__item: a.o-nav-column__link(href="#")
+								span.a-color(style="background: #f8e81c")
+								| Желтый
+				.t-catalog__button
+					a.a-button.a-button_type_link.a-button-two(href="#") все параметры
+		.t-tabs: .t-container: .t-tabs__container
+			ul.m-tabs(data-rel=".t-catalog__tabs")
+				li.m-tabs__item.active: a.m-tabs__link.m-tabs__link_active(href="#t-catalog-tab-1", data-toggle="tab") Дешёвые
+				li.m-tabs__item: a.m-tabs__link(href="#t-catalog-tab-2", data-toggle="tab") Дорогие
+				li.m-tabs__item: a.m-tabs__link(href="#t-catalog-tab-3", data-toggle="tab") Новые
+				li.m-tabs__item: a.m-tabs__link(href="#t-catalog-tab-4", data-toggle="tab") Лучшие
+		.t-catalog: .t-container: .tab-content: each arr in [1,2,3,4]
+			if arr == 1
+				.tab-pane.active.fade.in(id="t-catalog-tab-" + arr): .t-catalog__container
+					.o-catalogs.o-catalogs_limit_4-4-9
+						each arr in [1,2]
+							.o-catalogs__item: +m-catalog-item("Моя фея", "29 800тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("33 высоких элитних красных розы", "35 465тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Душа", "5 500тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Камео", "35 465тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Восточный шарм", "10 000тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Душа", "5 500тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Фаворит", "17 800тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Друг", "12 000тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Камео", "35 465тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+					.o-catalogs__more
+						a.o-catalogs__button.a-button.a-button_type_link.a-button_theme_white.a-button_size_md.a-button_w_460.a-button_bordered_gray(href="#buy", data-text-toggle="Меньше цветов")
+							.a-button__text.a-button__text_theme_white Больше цветов
+			else
+				.tab-pane.fade(id="t-catalog-tab-" + arr): .t-catalog__container
+					.o-catalogs.o-catalogs_limit_4-4-9
+						each arr in [1,2]
+							.o-catalogs__item: +m-catalog-item("М123оя фея", "29 800тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("33 высоких элитних красных розы", "35 465тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Душа", "5 500тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Камео", "35 465тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Восточный шарм", "10 000тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Душа", "5 500тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Фаворит", "17 800тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Друг", "12 000тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+							.o-catalogs__item: +m-catalog-item("Камео", "35 465тг", "Роза Аваланш, маттиола, кустовая роза, одноголовая гвоздика, эвкалипт ")
+					.o-catalogs__more
+						a.o-catalogs__button.a-button.a-button_type_link.a-button_theme_white.a-button_size_md.a-button_w_460.a-button_bordered_gray(href="#buy", data-text-toggle="Меньше цветов")
+							.a-button__text.a-button__text_theme_white Больше цветов
+		.t-foo: .t-container: .t-foo__container
+			.t-foo__nav: ul.m-nav-foo
+				li.m-nav-foo__item: a.m-nav-foo__link(href="#") О нас
+				li.m-nav-foo__item: a.m-nav-foo__link(href="#") Доставка
+				li.m-nav-foo__item: a.m-nav-foo__link(href="#") Оплата
+				li.m-nav-foo__item: a.m-nav-foo__link(href="#") Гарантии
+				li.m-nav-foo__item: a.m-nav-foo__link(href="#") Партнерская программа
+				li.m-nav-foo__item: a.m-nav-foo__link(href="#") Вакансии
+				li.m-nav-foo__item: a.m-nav-foo__link(href="#") Контакты
+				li.m-nav-foo__item: a.m-nav-foo__link(href="#") Партнеры
+				li.m-nav-foo__item: a.m-nav-foo__link(href="#") Публичная оферта
+				li.m-nav-foo__item: a.m-nav-foo__link(href="#") Конфиденциальность
+			.t-foo__social: ul.m-social
+				li.m-social__item: a.m-social__link(href="#"): +i-social-vk
+				li.m-social__item: a.m-social__link(href="#"): +i-social-in
+				li.m-social__item: a.m-social__link(href="#"): +i-social-fb
+		.t-foo__copy: .t-container: .a-copy © 2016 Cvety. Заказ и доставка свежих цветов по Астане и всему Казахстану
+		.t-menu-phone#t-menu-filter
+			.o-menu-phone
+				header.o-menu-phone__header
+					.o-menu-phone__title Каталог
+					.o-menu-phone__close(data-close="#t-menu-filter"): +i-close
+				.o-menu-phone__content
+					ul.o-menu-phone__list
+						li.o-menu-phone__item: .m-choose
+							.m-choose__header
+								.m-choose__title Цена
+								.m-choose__current
+								.m-choose__disclosure-indicator: +a-disclosure
+							ul.m-choose__list
+								li.m-choose__item до 15 000тг 
+								li.m-choose__item от 15 000тг до 30 000тг
+								li.m-choose__item от 30 000тг
+								
+						li.o-menu-phone__item: .m-choose
+							.m-choose__header
+								.m-choose__title Цветы
+								.m-choose__current
+								.m-choose__disclosure-indicator: +a-disclosure
+										
+							ul.m-choose__list
+								li.m-choose__item Кустовая роза
+								li.m-choose__item Голландские розы
+								li.m-choose__item Розы
+								li.m-choose__item Герберы
+								li.m-choose__item Тюльпаны
+						
+						li.o-menu-phone__item: .m-choose
+							.m-choose__header
+								.m-choose__title Кому
+								.m-choose__current
+								.m-choose__disclosure-indicator: +a-disclosure
+							ul.m-choose__list
+								li.m-choose__item Женщине
+								li.m-choose__item Мужчине
+								li.m-choose__item Коллеге
+								li.m-choose__item Любимой
+						
+						li.o-menu-phone__item: .m-choose
+							.m-choose__header
+								.m-choose__title Повод
+								.m-choose__current
+								.m-choose__disclosure-indicator: +a-disclosure
+							ul.m-choose__list
+								li.m-choose__item Праздник
+								li.m-choose__item День Рождения
+								li.m-choose__item Свадьба
+								li.m-choose__item Годовщина
+						
+						li.o-menu-phone__item: .m-choose
+							.m-choose__header
+								.m-choose__title Цвет
+								.m-choose__current
+								.m-choose__disclosure-indicator: +a-disclosure
+							ul.m-choose__list
+								li.m-choose__item Красный
+								li.m-choose__item Розовый
+								li.m-choose__item Белый
+								li.m-choose__item Желтый
+				a.o-menu-phone__apply.o-menu-phone__apply_hidden.a-button.a-button_type_link.a-button_theme_indigo.a-button_size_md(href="#buy", data-text-toggle="Меньше цветов")
+					.a-button__text.a-button__text_theme_indigo Применить
+		.t-menu-phone#t-menu-header
+			.o-menu-phone
+				header.o-menu-phone__header
+					.o-menu-phone__title Меню
+					.o-menu-phone__close(data-close="#t-menu-header"): +i-close
+				.o-menu-phone__content
+					ul.o-menu-phone__list
+						li.o-menu-phone__item: .m-choose
+							.m-choose__header
+								.m-choose__title Язык
+								.m-choose__current
+									span.m-choose__icon: +i-flag-russia()
+									| Русский
+								.m-choose__disclosure-indicator: +a-disclosure
+							ul.m-choose__list
+								li.m-choose__item 
+									span.m-choose__icon: +i-flag-russia()
+									| Русский
+								li.m-choose__item 
+									span.m-choose__icon: +i-flag-russia()
+									| Русский
+								li.m-choose__item 
+									span.m-choose__icon: +i-flag-russia()
+									| Русский
+						li.o-menu-phone__item: .m-choose
+							.m-choose__header
+								.m-choose__title Город
+								.m-choose__current
+									| Москва
+								.m-choose__disclosure-indicator: +a-disclosure
+							ul.m-choose__list
+								li.m-choose__item 
+									| Москва
+								li.m-choose__item 
+									| Москва
+								li.m-choose__item 
+									| Москва
+					ul.m-phone-nav
+						li.m-phone-nav__item: a.m-phone-nav__link(href="#") Контакты
+						li.m-phone-nav__item: a.m-phone-nav__link(href="#") Гарантии
+						li.m-phone-nav__item: a.m-phone-nav__link(href="#") Доставка
+						li.m-phone-nav__item: a.m-phone-nav__link(href="#") Оплата
+					ul.m-phone-bar
+						li.m-phone-bar__item: a.a-link.a-link-dashed(href="#") love@cvety.kz
+						li.m-phone-bar__item: a.a-link.a-link-dashed(href="#") +7 (702) 222 07 30
+		include pug/meta/scripts

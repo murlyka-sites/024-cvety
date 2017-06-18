@@ -1,0 +1,13 @@
+mixin m-catalog-item(title, price, desc)
+  .m-catalog-item
+    .m-catalog-item__inner
+      .m-catalog-item__title #{title}
+      .m-catalog-item__price #{price}
+      img.m-catalog-item__pr
+    .m-catalog-item-o
+      .m-catalog-item-o__header
+        .m-catalog-item-o__title #{title}
+        .m-catalog-item-o__price #{price}
+      .m-catalog-item-o__body
+        .m-catalog-item-o__desc #{desc}
+        a.m-catalog-item-o__button.a-button.a-button_type_link.a-button_theme_white.a-button_size_md.a-button_w_270(href="#buy"): .a-button__text.a-button__text_theme_white Купить

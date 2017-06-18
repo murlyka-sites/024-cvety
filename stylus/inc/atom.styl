@@ -1,0 +1,187 @@
+.a-icon
+  max-width 100%
+  // height auto
+
+.a-link
+  color inherit
+
+.a-burger
+  display inline-block
+  color $dark-indigo
+  fill currentColor
+
+  &_notification
+    position relative
+
+    &:before
+      content ""
+      position absolute
+      top -4px
+      right -4px
+      z-index 1
+      display block
+      width 6px
+      height 6px
+      border-radius 50%
+      background $red
+      border 2px solid $white
+
+.a-disclosure
+  box-sizing border-box
+  display inline-block
+  width 19px
+  height 19px
+  padding 1px 5px
+  text-align center
+
+.a-button
+  text-align center
+
+  &_type
+    &_link
+      display inline-block
+      text-decoration none
+
+  &_theme
+    &_white
+      border-radius 5px
+      background linear-gradient(to right, white 50%, $dark-indigo 50%,  $dark-indigo 100%)
+      background-size 200% 100%
+      background-position 0 0
+      background-clip padding-box
+      color $dark-indigo
+      font-size 22px
+      font-weight 700
+      letter-spacing -0.5px
+      transition all linear .3s
+
+      &:hover
+        background-position 100% 0
+    &_indigo
+      border-radius 5px
+      background linear-gradient(to right, $dark-indigo 50%, $white 50%,  $white 100%)
+      background-size 200% 100%
+      background-position 0 0
+      background-clip padding-box
+      color white
+      font-size 22px
+      font-weight 700
+      letter-spacing -0.5px
+      transition all linear .3s
+
+      &:hover
+        background-position 100% 0
+  &_w
+    &_270
+      width 200px
+      max-width 100%
+
+      @media (min-width $tablet)
+        width 270px
+
+    &_460
+      width 200px
+      max-width 100%
+
+      @media (min-width $mobile-md)
+        width 280px
+
+      @media (min-width $tablet)
+        width 460px
+
+
+  &_size
+    &_md
+      padding 8px 10px
+      line-height 20px
+
+      @media (min-width $tablet)
+        padding 11px 10px 12px
+        line-height 27px
+
+  &_bordered
+    &_gray
+      border 1px solid rgba(0, 0, 0, 0.1)
+
+  &__text
+    transition all linear .3s
+
+    &_theme
+      &_white
+        color $dark-indigo
+
+        @supports(-webkit-background-clip text)
+          background linear-gradient(to right, $dark-indigo 50%, $white 50%,  $white 100%)
+          background-size 200% 100%
+          background-position 0 0
+          -webkit-background-clip text
+          -webkit-text-fill-color transparent
+      &_indigo
+        color $white
+
+        @supports(-webkit-background-clip text)
+          background linear-gradient(to right, $white 50%, $dark-indigo 50%,  $dark-indigo 100%)
+          background-size 200% 100%
+          background-position 0 0
+          -webkit-background-clip text
+          -webkit-text-fill-color transparent
+
+  &_theme_white:hover &__text_theme_white
+    color white
+
+    @supports(-webkit-background-clip text)
+      background-position 100% 0
+
+  &_theme_indigo:hover &__text_theme_indigo
+    color $dark-indigo
+
+    @supports(-webkit-background-clip text)
+      background-position 100% 0
+
+
+
+.a-copy
+  padding 0 10px
+  text-align center
+  font-size 13px
+  letter-spacing -0.5px
+  line-height 1.54
+  color $dark-indigo
+  opacity 0.5
+
+  @media (min-width $tablet)
+    letter-spacing 0.2px
+
+.a-color
+  box-sizing border-box
+  display inline-block
+  width 12px
+  height 12px
+  border-radius 50%
+  margin-right 3px
+
+  &_bordered
+    border 1px solid $gray
+
+.a-button-two
+  background white
+  padding 6px 12px
+  color #888
+  border-radius 5px
+  border 2px solid $white-tree
+  font-size 14px
+  line-height 17px
+  letter-spacing 0.5px
+
+  &:hover
+    background $white-tree
+    color $dark-indigo
+
+.a-link-dashed
+  display inline
+  vertical-align bottom
+  border-bottom 1px dashed
+  text-decoration none
+
+  &:hover
+    border-bottom none
